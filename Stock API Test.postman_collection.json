@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "97358870-3d6f-4027-bf66-a48dda584833",
+		"name": "Stock API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17606435"
+	},
+	"item": [
+		{
+			"name": "API Create Stock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_name\": \"Test Item44\",\r\n    \"quantity\": 123,\r\n    \"serial_number\": \"SNI123\",\r\n    \"additional_info\": [{\"color\": \"red\", \"size\": \"M\"}],\r\n    \"item_image\": \"path/to/image.jpg\",\r\n    \"created_by\": \"Budi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8080/stocks -H \"Content-Type: application/json\" -d '{\r\n    \"item_name\": \"Example Item\",\r\n    \"quantity\": 100,\r\n    \"serial_number\": \"SN1234567890\",\r\n    \"additional_info\": {\"color\": \"red\", \"size\": \"M\"},\r\n    \"item_image\": \"path/to/image.jpg\",\r\n    \"created_by\": \"Budi\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "API List stock",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8080/stocks"
+			},
+			"response": []
+		},
+		{
+			"name": "API Detail Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stocks/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8080/stocks/{id}\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "API Update Stock",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item_name\": \"updated Test Item test\",\n    \"quantity\": 123,\n    \"serial_number\": \"SNI123\",\n    \"additional_info\": [{\n        \"brand\": \"x1\",\n        \"price\": 111\n    }],\n    \"item_image\": \"path/to/image.jpg\",\n    \"created_by\": \"irfan\",\n    \"updated_by\": \"pp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/stocks/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://localhost:8080/stocks/{id} \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"item_name\": \"Updated Item\",\n    \"quantity\": 150,\n    \"serial_number\": \"SN0987654321\",\n    \"additional_info\": [{\"color\": \"green\", \"size\": \"S\"}],\n    \"item_image\": \"path/to/new_image.jpg\",\n    \"created_by\": \"Budi\",\n    \"updated_by\": \"Budi\"\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete stock",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stocks/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "23"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE http://localhost:8080/stocks/{id}\r\n"
+			},
+			"response": []
+		}
+	]
+}
